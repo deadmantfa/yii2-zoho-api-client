@@ -1,23 +1,29 @@
 {
-    "name": "deadmantfa/yii2-zoho-api-client",
-    "description": "A Client for Zoho API's",
-    "type": "yii2-extension",
-    "keywords": ["yii2","extension",
-        " src"
-    ],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "deadmantfa",
-            "email": "wenceslausdsilva@gmail.com"
-        }
-    ],
-    "require": {
-        "yiisoft/yii2": "~2.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "deadmantfa\\yii2\\zoho\\": ""
-        }
+  "name": "deadmantfa/yii2-zoho-api-client",
+  "description": "A Client for Zoho API's",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension",
+    "zoho",
+    "zoho-api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "deadmantfa",
+      "email": "wenceslausdsilva@gmail.com"
     }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "deadmantfa\\yii2\\zoho\\": "src/"
+    }
+  }
 }

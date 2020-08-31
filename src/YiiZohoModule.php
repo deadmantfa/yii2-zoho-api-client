@@ -10,7 +10,8 @@ class YiiZohoModule extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public $controllerNamespace = 'backend\modules\zoho\controllers';
+//    public $controllerNamespace = 'deadmantfa\yii2\zoho\controllers';
+    public $defaultRoute = 'default/index';
 
     /**
      * {@inheritdoc}

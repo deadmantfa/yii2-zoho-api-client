@@ -2,7 +2,9 @@
     "name": "deadmantfa/yii2-zoho-api-client",
     "description": "A Client for Zoho API's",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension"," zoho"],
+    "keywords": ["yii2","extension",
+        " src"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "deadmantfa\\zohoApiClient\\": ""
+            "deadmantfa\\yii2\\zoho\\": ""
         }
     }
 }

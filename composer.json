@@ -1,0 +1,21 @@
+{
+    "name": "deadmantfa/yii2-zoho-api-client",
+    "description": "A Client for Zoho API's",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," zoho"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "deadmantfa",
+            "email": "wenceslausdsilva@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "deadmantfa\\zohoApiClient\\": ""
+        }
+    }
+}

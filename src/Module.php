@@ -2,15 +2,20 @@
 
 namespace deadmantfa\yii2\zoho;
 
+use yii\base\Module as BaseModule;
+
 /**
  * YiiZohoModule module definition class
  */
-class YiiZohoModule extends \yii\base\Module
+class Module extends BaseModule
 {
+    public $baseApiURI = 'https://inventory.zoho.in/';
+
     /**
      * {@inheritdoc}
      */
-//    public $controllerNamespace = 'deadmantfa\yii2\zoho\controllers';
+    public $controllerNamespace = 'deadmantfa\yii2\zoho\controllers';
+
     public $defaultRoute = 'default/index';
 
     /**

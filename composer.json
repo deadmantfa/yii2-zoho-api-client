@@ -9,6 +9,7 @@
     "zoho-api"
   ],
   "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "deadmantfa",
@@ -16,7 +17,9 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": "~2.0.0"
+    "yiisoft/yii2": "~2.0.0",
+    "yiisoft/yii2-authclient": "~2.1.0",
+    "yiisoft/yii2-httpclient": "~2.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

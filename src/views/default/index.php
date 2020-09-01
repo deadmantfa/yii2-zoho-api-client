@@ -1,12 +1,37 @@
-<div class="YiiZohoModule-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
-    <p>
-        This is the view content for action "<?= $this->context->action->id ?>".
-        The action belongs to the controller "<?= get_class($this->context) ?>"
-        in the "<?= $this->context->module->id ?>" module.
-    </p>
-    <p>
-        You may customize this page by editing the following file:<br>
-        <code><?= __FILE__ ?></code>
-    </p>
-</div>
+<?php
+
+use yii\authclient\widgets\AuthChoice;
+
+$this->title = 'Zoho Module';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<?php
+echo \yii\widgets\DetailView::widget([
+    'model' => $model,
+    'attributes' => [
+        'user.email',               // title attribute (in plain text)
+        'source',
+        'access_token',
+        'refresh_token',
+        'expires_in',
+        'created_at:datetime', // creation date formatted as datetime
+        'updated_at:datetime', // creation date formatted as datetime
+    ],
+]);
+?>
+<?php
+$authAuthChoice = AuthChoice::begin([
+    'baseAuthUrl' => ['/zoho/default/auth'],
+    'popupMode' => false
+]);
+?>
+    <ul class="auth-clients">
+        <?php foreach ($authAuthChoice->getClients() as $client): ?>
+
+            <li><?= $authAuthChoice->clientLink($client, '<span class="fas fa-sign-in-alt fa-2x text-secondary">&nbsp;Re-Authorize Zoho</span>',
+                    [
+                        'class' => 'auth-link',
+                    ]) ?></li>
+        <?php endforeach; ?>
+    </ul>
+

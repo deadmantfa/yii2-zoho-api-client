@@ -2,7 +2,9 @@
 
 namespace deadmantfa\yii2\zoho\exceptions;
 
-class GenerateTokenException extends \yii\base\Exception
+use yii\base\Exception;
+
+class GenerateTokenException extends Exception
 {
 
 }

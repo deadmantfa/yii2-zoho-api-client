@@ -1,12 +1,13 @@
 <?php
 
 use yii\authclient\widgets\AuthChoice;
+use yii\widgets\DetailView;
 
 $this->title = 'Zoho Module';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php
-echo \yii\widgets\DetailView::widget([
+echo DetailView::widget([
     'model' => $model,
     'attributes' => [
         'user.email',               // title attribute (in plain text)
@@ -25,16 +26,12 @@ $authAuthChoice = AuthChoice::begin([
     'popupMode' => false
 ]);
 ?>
-    <ul class="auth-clients">
-        <?php foreach ($authAuthChoice->getClients() as $client): ?>
+<ul class="auth-clients">
+    <?php foreach ($authAuthChoice->getClients() as $client): ?>
 
-            <li><?= $authAuthChoice->clientLink($client, '<span class="fas fa-sign-in-alt fa-2x text-secondary">&nbsp;Re-Authorize Zoho</span>',
-                    [
-                        'class' => 'auth-link',
-                    ]) ?></li>
-        <?php endforeach; ?>
-    </ul>
-<?php
-$zoho = Yii::$app->zoho->get('items/609868000002364607');
-echo '<pre>';
-print_r($zoho);
+        <li><?= $authAuthChoice->clientLink($client, '<span class="fas fa-sign-in-alt fa-2x text-secondary">&nbsp;Re-Authorize Zoho</span>',
+                [
+                    'class' => 'auth-link',
+                ]) ?></li>
+    <?php endforeach; ?>
+</ul>

@@ -4,8 +4,8 @@ namespace deadmantfa\yii2\zoho\controllers;
 
 use deadmantfa\yii2\zoho\auth\ZohoAuthHandler;
 use deadmantfa\yii2\zoho\models\ZohoAuth;
-use yii\web\Controller;
 use yii\authclient\AuthAction;
+use yii\web\Controller;
 
 /**
  * Default controller for the `YiiZohoModule` module

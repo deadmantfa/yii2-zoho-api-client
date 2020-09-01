@@ -4,9 +4,8 @@
 namespace deadmantfa\yii2\zoho\components;
 
 
-use deadmantfa\yii2\zoho\models\ZohoAuth;
 use deadmantfa\yii2\zoho\exceptions\GenerateTokenException;
-use http\Header;
+use deadmantfa\yii2\zoho\models\ZohoAuth;
 use Yii;
 use yii\base\Component;
 use yii\base\InvalidConfigException;

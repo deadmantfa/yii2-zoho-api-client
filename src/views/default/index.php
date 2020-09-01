@@ -34,4 +34,7 @@ $authAuthChoice = AuthChoice::begin([
                     ]) ?></li>
         <?php endforeach; ?>
     </ul>
-
+<?php
+$zoho = Yii::$app->zoho->get('items/609868000002364607');
+echo '<pre>';
+print_r($zoho);

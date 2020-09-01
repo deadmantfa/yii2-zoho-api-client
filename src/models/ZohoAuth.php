@@ -3,7 +3,6 @@
 namespace deadmantfa\yii2\zoho\models;
 
 use common\models\User;
-use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
@@ -73,6 +72,7 @@ class ZohoAuth extends ActiveRecord
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }
+
     public function behaviors()
     {
         return [

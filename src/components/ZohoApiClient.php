@@ -94,6 +94,7 @@ class ZohoApiClient extends Component
             Yii::$app->getSession()->setFlash('error', [
                 Yii::t('app', $response->data['message']),
             ]);
+            return false;
         }
         return $response->data;
     }
@@ -106,6 +107,7 @@ class ZohoApiClient extends Component
             Yii::$app->getSession()->setFlash('error', [
                 Yii::t('app', $response->data['message']),
             ]);
+            return false;
         }
         return $response->data;
     }
@@ -118,6 +120,7 @@ class ZohoApiClient extends Component
             Yii::$app->getSession()->setFlash('error', [
                 Yii::t('app', $response->data['message']),
             ]);
+            return false;
         }
         return $response->data;
     }
@@ -130,6 +133,7 @@ class ZohoApiClient extends Component
             Yii::$app->getSession()->setFlash('error', [
                 Yii::t('app', $response->data['message']),
             ]);
+            return false;
         }
         return $response->data;
     }

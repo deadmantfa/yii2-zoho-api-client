@@ -35,6 +35,9 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $model = ZohoAuth::find()->where(['user_id' => \Yii::$app->user->id, 'source' => 'zoho'])->one();
+        if (!$model) {
+            $model = new ZohoAuth();
+        }
         return $this->render('index', ['model' => $model]);
     }
 }

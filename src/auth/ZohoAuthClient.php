@@ -15,7 +15,7 @@ class ZohoAuthClient extends OAuth2
 
     public $scope = 'ZohoInventory.FullAccess.all';
 
-    public $returnUrl = 'https://back.fdi.test/zoho/default/auth?authclient=zoho';
+    public $returnUrl;
 
     public $accessType = 'offline';
 

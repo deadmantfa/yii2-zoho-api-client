@@ -45,6 +45,12 @@ class ZohoApiClient extends Component
                     'client_secret' => '79eaf44dc171125d43f244e9bed0ea8cf0c480fe1f',
                     'grant_type' => 'refresh_token'
                 ])->send();
+                if ($response->isOk) {
+                    Yii::$app->getSession()->setFlash('error', [
+                        Yii::t('app', $response->data['message']),
+                    ]);
+                    return false;
+                }
                 $auth->access_token = $response->data['access_token'];
                 $auth->save();
                 $auth->refresh();
@@ -52,6 +58,7 @@ class ZohoApiClient extends Component
                 Yii::$app->getSession()->setFlash('error', [
                     Yii::t('app', $response->data['message']),
                 ]);
+                return false;
             }
         }
         $this->_token = $auth->access_token;

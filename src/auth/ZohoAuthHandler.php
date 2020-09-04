@@ -31,11 +31,11 @@ class ZohoAuthHandler
             $auth = new ZohoAuth([
                 'user_id' => Yii::$app->user->id,
                 'source' => $this->client->getId(),
-                'access_token' => $access_token,
                 'refresh_token' => $refresh_token,
                 'expires_in' => $expires_in,
             ]);
         }
+        $auth->access_token = $access_token;
         if ($auth->save()) {
             Yii::$app->getSession()->setFlash('success', [
                 Yii::t('app', 'Linked {client} account.', [

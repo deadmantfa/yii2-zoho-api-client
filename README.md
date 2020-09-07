@@ -1,6 +1,9 @@
-Yii2 Zoho API Client
+Yii2 Zoho REST API Client
 ====================
-A Client for Zoho API's
+A Client for Zoho RESTful API's
+
+[![Powered By Yii2](https://img.shields.io/static/v1?label=Powered&nbsp;By&message=Yii2&color=blue&style=for-the-badge)](https://yiiframework.com/)
+[![Type](https://img.shields.io/static/v1?label=Type&message=Yii2&nbsp;Extension&color=yellow&style=for-the-badge)](https://yiiframework.com/)
 
 ![Packagist Version](https://img.shields.io/packagist/v/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
@@ -8,6 +11,11 @@ A Client for Zoho API's
 ![GitHub top language](https://img.shields.io/github/languages/top/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
 ![GitHub stars](https://img.shields.io/github/stars/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/deadmantfa/yii2-zoho-api-client?style=for-the-badge)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/deadmantfa/yii2-zoho-api-client/graphs/commit-activity)
+[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg?style=for-the-badge)](https://saythanks.io/to/wenceslausdsilva%40gmail.com)
+
+![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)
 
 Installation
 ------------

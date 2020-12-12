@@ -9,7 +9,6 @@ use deadmantfa\yii2\zoho\models\ZohoAuth;
 use Yii;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
-use yii\helpers\Json;
 use yii\httpclient\Client;
 use yii\httpclient\Exception;
 
@@ -41,8 +40,8 @@ class ZohoApiClient extends Component
             try {
                 $response = $client->post('token', [
                     'refresh_token' => $auth->refresh_token,
-                    'client_id' => '1000.JK94K0UIL3HBF478FAZZ821EWQK3ER',
-                    'client_secret' => '79eaf44dc171125d43f244e9bed0ea8cf0c480fe1f',
+                    'client_id' => Yii::$app->params['zoho-api-client-id'],
+                    'client_secret' => Yii::$app->params['zoho-api-client-secret'],
                     'grant_type' => 'refresh_token'
                 ])->send();
                 if (!$response->isOk) {
@@ -73,9 +72,6 @@ class ZohoApiClient extends Component
                     'baseUrl' => $this->apiBaseUrl,
                     'requestConfig' => [
                         'format' => Client::FORMAT_JSON,
-                        'options' => [
-                            'organization_id' => $this->organizationId
-                        ],
                         'headers' => [
                             'Authorization' => 'Bearer ' . $this->_token
                         ]
@@ -95,6 +91,11 @@ class ZohoApiClient extends Component
 
     public function get($path, array $data = null)
     {
+        if (strpos($path, '?') !== false) {
+            $path .= '&organization_id=' . $this->organizationId;
+        } else {
+            $path .= '?organization_id=' . $this->organizationId;
+        }
         $response = $this->getHttpClient()->get($path, $data)->send();
 
         if (!$response->isOk) {
@@ -108,6 +109,11 @@ class ZohoApiClient extends Component
 
     public function post($path, array $data = null)
     {
+        if (strpos($path, '?') !== false) {
+            $path .= '&organization_id=' . $this->organizationId;
+        } else {
+            $path .= '?organization_id=' . $this->organizationId;
+        }
         $response = $this->getHttpClient()->post($path, $data)->send();
 
         if (!$response->isOk) {
@@ -121,6 +127,11 @@ class ZohoApiClient extends Component
 
     public function put($path, array $data = null)
     {
+        if (strpos($path, '?') !== false) {
+            $path .= '&organization_id=' . $this->organizationId;
+        } else {
+            $path .= '?organization_id=' . $this->organizationId;
+        }
         $response = $this->getHttpClient()->put($path, $data)->send();
 
         if (!$response->isOk) {
@@ -134,6 +145,11 @@ class ZohoApiClient extends Component
 
     public function delete($path, array $data = null)
     {
+        if (strpos($path, '?') !== false) {
+            $path .= '&organization_id=' . $this->organizationId;
+        } else {
+            $path .= '?organization_id=' . $this->organizationId;
+        }
         $response = $this->getHttpClient()->delete($path, $data)->send();
 
         if (!$response->isOk) {
